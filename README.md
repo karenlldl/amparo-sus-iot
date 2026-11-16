@@ -37,8 +37,6 @@ O protótipo valida **conectividade, registro remoto e automação**, não a ide
 | Lucas de Souza Dudena | 567600 | 2TDSPA |
 | Karen Lucinda Lira Cardoso | 566870 | 2TDSPA |
 
-> **Pendente:** informar a turma oficial dos integrantes antes da entrega. Os nomes e RMs devem constar também no `.txt` de identificação do Portal FIAP.
-
 ## 3. Arquitetura de rede
 
 ![Diagrama de arquitetura do AMPARO SUS](AMPARO_SUS_Arquitetura_IoT.png)
