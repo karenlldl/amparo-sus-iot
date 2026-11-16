@@ -1,5 +1,9 @@
 # AMPARO SUS — Protótipo IoT e Comunicação em Rede
 
+<p align="center">
+  <img src="banner-amparo-sus.png" alt="AMPARO SUS - Monitoramento Domiciliar Inteligente" width="100%">
+</p>
+
 **Global Solution 2026/2 • CitizenTech • FIAP**  
 **Disciplina:** Disruptive Architectures: IoT, IoB & Generative IA  
 **Repositório:** https://github.com/karenlldl/amparo-sus-iot
