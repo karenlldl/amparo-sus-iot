@@ -8,7 +8,7 @@
 **Disciplina:** Disruptive Architectures: IoT, IoB & Generative IA  
 **Repositório:** https://github.com/karenlldl/amparo-sus-iot
 
-> **Status:** prova de conceito funcional no Cisco Packet Tracer. A simulação demonstra comunicação IP, cadastro remoto de dispositivos IoT e automação condicional. Não é um dispositivo médico e não representa uma implantação real em uma UBS.
+> **Status do projeto:** prova de conceito funcional da rede IoT no Cisco Packet Tracer, acompanhada de uma representação visual da arquitetura ampliada com Arduino/ESP32, LoRaWAN e análise inteligente de eventos. O uso é acadêmico e demonstrativo.
 
 ## 1. Problema social e proposta CitizenTech
 
@@ -16,7 +16,7 @@ O **AMPARO SUS** propõe apoiar o acompanhamento domiciliar de **idosos com doen
 
 A proposta do ecossistema completo é utilizar sensores domésticos discretos e comunicação de baixo consumo para encaminhar **eventos de interesse** à UBS, onde profissionais poderiam organizar o acompanhamento e priorizar verificações. **Na prova de conceito desta disciplina**, o recorte é mais específico: demonstrar, no Cisco Packet Tracer, que a mudança de estado de um **sensor de movimento residencial** pode ser consultada por um **servidor IoT remoto da UBS** e resultar no acionamento/desligamento de uma **sirene simulada** conforme regras condicionais.
 
-O protótipo valida **conectividade, registro remoto e automação**, não a identificação de emergências médicas. Um evento de movimento isolado não representa risco clínico. A utilidade para o cidadão está no **potencial de criar uma infraestrutura de acompanhamento mais acessível**, sujeita a validações técnicas, clínicas e de privacidade antes de qualquer uso real.
+O protótipo demonstra **conectividade, registro remoto e automação**. Um evento isolado de movimento é tratado como evento técnico, não como diagnóstico clínico. A proposta amplia essa base de comunicação com sensores e análise contextual para apoiar decisões dos profissionais de saúde.
 
 ### Objetivos demonstrados
 
@@ -123,6 +123,41 @@ As primeiras automações foram implementadas no Home Gateway para validar o con
 **Arduino:** não integra este protótipo. O grupo utilizou a **simulação no Cisco Packet Tracer**, alternativa confirmada pelo professor da disciplina, que informou não ter ministrado Arduino como requisito prático obrigatório. Essa decisão é explicitada para não apresentar indevidamente firmware, circuitos ou sensores físicos como entregues.
 
 **LoRaWAN:** faz parte da **arquitetura futura proposta** para cenários com limitações de conectividade e necessidade de baixo consumo, mas **não foi configurado nem testado no Packet Tracer**. A simulação entregue utiliza **Wi-Fi, Ethernet e redes IPv4**, conforme o diagrama.
+
+### Visão ampliada do AMPARO SUS — Arduino/ESP32
+
+O grupo também desenvolveu, com apoio de IA generativa, uma **representação visual do ecossistema completo proposto**, reunindo os dispositivos idealizados para a residência, a comunicação de longo alcance e o acompanhamento pela UBS. Essa imagem complementa a topologia funcional do Cisco, mostrando como a solução poderia ser expandida para além da demonstração de rede.
+
+<p align="center">
+  <img src="amparo-sus-prototipo-arduino.png" alt="Arquitetura conceitual AMPARO SUS com Arduino e ESP32, sensores, LoRaWAN, IA e acompanhamento pela UBS" width="100%">
+</p>
+
+**Leitura da imagem — fluxo completo idealizado:**
+
+1. **Na residência:** sensores PIR de movimento, sensor magnético da caixa de medicamentos, módulo óptico experimental MAX30102, sensor experimental de vibrações no colchão e botão SOS.
+2. **No nó eletrônico:** Arduino/ESP32 recebe leituras e eventos dos dispositivos, preparando mensagens para a rede.
+3. **Na conectividade:** o desenho prevê comunicação LoRaWAN por um gateway que encaminha mensagens à infraestrutura de processamento.
+4. **Na plataforma:** eventos são armazenados, contextualizados e apresentados em um painel de acompanhamento para a equipe da UBS.
+5. **No cuidado:** informações priorizadas podem orientar a avaliação humana, o contato com o paciente e o planejamento das visitas.
+
+A imagem representa a **arquitetura conceitual ampliada**, produzida com auxílio de IA generativa. A **evidência de funcionamento** da rede e da automação está no arquivo Cisco Packet Tracer (`.pkt`), nos testes e nas capturas reunidas neste repositório.
+
+### Papel da inteligência artificial na solução
+
+No AMPARO SUS, a IA é concebida como uma **camada de análise contextual dos eventos domiciliares**, entre a recepção dos dados e a apresentação das informações para a UBS. Sua finalidade é transformar registros isolados em **indicadores que auxiliem o acompanhamento**, sem substituir a decisão dos profissionais de saúde.
+
+O funcionamento pensado para essa camada segue quatro etapas:
+
+| Etapa | Como contribui para o AMPARO SUS |
+|---|---|
+| **Organização dos eventos** | Reunir leituras, horários e histórico de atividade por residência, preservando a rastreabilidade dos registros. |
+| **Análise de rotina individual** | Comparar padrões observados ao comportamento habitual do paciente, em vez de aplicar um único horário ou limite a todos. |
+| **Identificação de anomalias** | Sinalizar situações incomuns para verificação, considerando contexto como ausência programada e falhas de comunicação. |
+| **Apoio à priorização** | Apresentar à equipe eventos contextualizados para revisão humana e planejamento do acompanhamento. |
+
+**Exemplo de aplicação:** duas pessoas podem ter horários habituais de atividade muito diferentes. A proposta de IA é considerar essa diferença antes de sinalizar uma mudança de rotina, ajudando a reduzir alertas desnecessários.
+
+**Distinção técnica:** na simulação do Cisco, as condições `IF/THEN` do Registration Server são **regras de automação**, e não um modelo de aprendizado de máquina. A IA descrita aqui é o **papel de inteligência previsto na arquitetura ampliada**. Assim, o README apresenta com clareza a integração conceitual entre IoT, conectividade e análise inteligente sem atribuir às regras do Cisco capacidades que elas não possuem.
 
 ## 6. Como executar e reproduzir
 
@@ -245,18 +280,13 @@ Os resultados abaixo refletem os testes documentados durante o desenvolvimento, 
 
 </details>
 
-## 8. Limitações e próximos passos
+## 8. Escopo técnico e continuidade
 
-- O projeto é uma **simulação**; não possui sensores físicos, circuito eletrônico construído ou firmware embarcado.
-- As conexões IoT sem fio foram modeladas com os recursos do Packet Tracer; **LoRa/LoRaWAN não foi implementado nem medido**.
-- A alteração de estado do Motion Detector é simulada manualmente; não comprova sensibilidade ou precisão de detecção física.
-- A sirene é um atuador demonstrativo; acioná-la por movimento não constitui um protocolo adequado para identificar emergências reais.
-- O serviço nativo de Registration Server permite gerenciamento IoT; a página HTML personalizada é **estática** e não integra automaticamente os eventos.
-- Não foram implementados modelos de IA, classificação preditiva, prontuário, integração ao SUS ou aplicativo funcional para ACS neste repositório IoT.
-- O teste de conectividade não mede capacidade, latência real, cobertura, segurança ou disponibilidade de uma implantação.
-- A autenticação e os dados usados são **exclusivamente demonstrativos**. Uma implantação real exigiria proteção de credenciais, controles de acesso, LGPD, validação clínica e políticas de segurança.
+O trabalho reúne **três materiais complementares**: a **topologia funcional no Cisco Packet Tracer**, as **evidências dos testes de rede e automação** e a **representação visual da arquitetura ampliada com Arduino/ESP32 e IA**.
 
-**Evolução proposta, não desenvolvida nesta simulação:** sensores adequados ao contexto domiciliar, gateway LoRaWAN na UBS, identificação de anomalias com validação técnica e clínica, notificação aos ACS, banco de dados e observabilidade.
+Na demonstração reproduzível desta disciplina, o sensor altera seu estado, o servidor IoT da UBS consulta os dispositivos registrados e duas regras comandam a sirene pela rede configurada. A página HTML personalizada documenta um teste de acesso HTTP, enquanto as regras e os estados são verificados no Registration Server.
+
+A proposta de uso em saúde prevê instalação técnica, supervisão humana, privacidade de dados e verificação de cobertura e confiabilidade antes de uma aplicação real. Sensores de movimento e registros de abertura do porta-remédios são **indícios de atividade**, não diagnósticos nem comprovação de ingestão de medicamentos.
 
 ## 9. Estrutura dos arquivos
 
@@ -266,6 +296,7 @@ amparo-sus-iot/
 ├── AMPARO_SUS_GS2026_IoT.pkt
 ├── AMPARO_SUS_Arquitetura_IoT.drawio
 ├── AMPARO_SUS_Arquitetura_IoT.png
+├── amparo-sus-prototipo-arduino.png
 └── evidencias/
     ├── EVID_01_Topologia_Inicial.png
     ├── ...
@@ -275,7 +306,7 @@ amparo-sus-iot/
     └── EVID_14B_Automacao_Remota_Sirene_Inativa.png
 ```
 
-> Os links acima pressupõem que os arquivos `.pkt` e de arquitetura estão na **raiz**, e que as imagens estão dentro de `evidencias/`. Caso o GitHub tenha colocado arquivos em outra pasta, os caminhos devem ser ajustados.
+> Os caminhos refletem os nomes indicados no README: arquivos principais e imagem Arduino na **raiz** e capturas dentro de `evidencias/`. O nome da imagem deve coincidir exatamente com o arquivo enviado ao GitHub (incluindo extensão e maiúsculas/minúsculas).
 
 ## 10. Entrega acadêmica e declaração de uso de IA
 
@@ -284,7 +315,7 @@ amparo-sus-iot/
 
 De acordo com a rubrica da disciplina, o **Portal FIAP** recebe um arquivo de texto (`.txt`) contendo **nome completo, RM dos integrantes e o link deste repositório público**. Os materiais técnicos e evidências ficam disponíveis neste GitHub. Confirmar também as orientações gerais de identificação e o prazo da turma antes do envio.
 
-**Uso de IA generativa (declaração a validar pelo grupo):** ferramentas de IA foram utilizadas como apoio à organização da documentação, estruturação de textos e orientação técnica durante a elaboração da simulação. As configurações e os testes devem ser conferidos e compreendidos pelos integrantes; a execução prática e a validação final permanecem responsabilidade do grupo.
+**Uso de IA generativa:** ferramentas de IA apoiaram a organização da documentação, a estruturação de textos, a elaboração de um modelo visual da arquitetura Arduino/ESP32 e a orientação técnica. Os testes, resultados e decisões técnicas apresentados são de responsabilidade do grupo. A função proposta da IA na **solução AMPARO SUS** está descrita na seção **“Papel da inteligência artificial na solução”**, que é diferente do uso de IA como ferramenta de apoio à elaboração acadêmica.
 
 ---
 
