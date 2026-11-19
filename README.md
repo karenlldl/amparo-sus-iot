@@ -237,8 +237,6 @@ Os resultados abaixo refletem os testes documentados durante o desenvolvimento, 
 | T13 | Estados no painel remoto | Alternância visual observada (ver nota) | [13A](evidencias/EVID_13A_Painel_Remoto_Indicador_Vermelho.png) / [13B](evidencias/EVID_13B_Painel_Remoto_Indicador_Verde.png) |
 | T14 | Automação no servidor remoto da UBS | Sirene acionada e desligada segundo as regras | [14A](evidencias/EVID_14A_Automacao_Remota_Sirene_Ativa.png) / [14B](evidencias/EVID_14B_Automacao_Remota_Sirene_Inativa.png) |
 
-**Observação sobre a Evidência 13:** as legendas de *ativo/inativo* no Word original não estão consistentes com as cores em todas as capturas. Por isso, os arquivos extraídos usam nomes **vermelho/verde**, que descrevem apenas o indicador observado. Para concluir sobre o estado lógico do sensor, confirme também `Attributes → state` na simulação. **Não se deve deduzir exclusivamente a detecção de movimento pela cor.**
-
 ### Galeria das principais evidências
 
 <details>
