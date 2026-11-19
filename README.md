@@ -311,8 +311,6 @@ amparo-sus-iot/
 **Disciplina:** Disruptive Architectures: IoT, IoB & Generative IA — FIAP  
 **Desafio:** Global Solution 2026/2 — CitizenTech
 
-De acordo com a rubrica da disciplina, o **Portal FIAP** recebe um arquivo de texto (`.txt`) contendo **nome completo, RM dos integrantes e o link deste repositório público**. Os materiais técnicos e evidências ficam disponíveis neste GitHub. Confirmar também as orientações gerais de identificação e o prazo da turma antes do envio.
-
 **Uso de IA generativa:** ferramentas de IA apoiaram a organização da documentação, a estruturação de textos, a elaboração de um modelo visual da arquitetura Arduino/ESP32 e a orientação técnica. Os testes, resultados e decisões técnicas apresentados são de responsabilidade do grupo. A função proposta da IA na **solução AMPARO SUS** está descrita na seção **“Papel da inteligência artificial na solução”**, que é diferente do uso de IA como ferramenta de apoio à elaboração acadêmica.
 
 ---
