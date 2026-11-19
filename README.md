@@ -311,7 +311,9 @@ amparo-sus-iot/
 **Disciplina:** Disruptive Architectures: IoT, IoB & Generative IA — FIAP  
 **Desafio:** Global Solution 2026/2 — CitizenTech
 
-**Uso de IA generativa:** ferramentas de IA apoiaram a organização da documentação, a estruturação de textos, a elaboração de um modelo visual da arquitetura Arduino/ESP32 e a orientação técnica. Os testes, resultados e decisões técnicas apresentados são de responsabilidade do grupo. A função proposta da IA na **solução AMPARO SUS** está descrita na seção **“Papel da inteligência artificial na solução”**, que é diferente do uso de IA como ferramenta de apoio à elaboração acadêmica.
+**Uso de IA generativa:** ferramentas de inteligência artificial foram utilizadas como apoio à organização da documentação, revisão de textos, orientação técnica e elaboração de uma representação visual conceitual da arquitetura Arduino/ESP32. O grupo revisou os materiais produzidos e permanece responsável pelas decisões técnicas, testes e resultados apresentados.
+
+O uso de IA como ferramenta de apoio acadêmico é distinto da inteligência artificial proposta para o funcionamento do AMPARO SUS, descrita na seção **“Papel da inteligência artificial na solução”**.
 
 ---
 
